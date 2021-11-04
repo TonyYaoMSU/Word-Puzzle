@@ -27,7 +27,7 @@ public class WordPuzzle {
         // return the new list
         return newList;
     }
-
+    // The following 8 functions of orientations can be merged by setting orientation as one paramter.
     public static void seeRight(QuadraticProbingHashTable<String> table, HashMap<String, Boolean> map, ArrayList<String> results, char matrix[][], boolean en)
 	{
 		StringBuilder sb = new StringBuilder();	
@@ -395,8 +395,8 @@ public class WordPuzzle {
         seeUp(H, isWord, wordsFound, matrix, en);
         seeRightUp(H, isWord, wordsFound, matrix, en);
         long endTime = System.currentTimeMillis( );
-        wordsFound = removeDuplicates(wordsFound);
-        Collections.sort(wordsFound);
+        wordsFound = removeDuplicates(wordsFound); // remove duplicate
+        Collections.sort(wordsFound); // sort
         System.out.println("Printing words found: ");
         for(String a: wordsFound)
         {
@@ -404,7 +404,4 @@ public class WordPuzzle {
         }
         System.out.println("Total "+wordsFound.size()+" words found, time taken = "+(endTime-startTime)+" ms");
     }
-
-
-
 }
