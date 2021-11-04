@@ -1,3 +1,5 @@
+package PPT.chap5;
+
 // Ozbirn, 10/19/2015
 // Word Search Puzzle program as described in Weiss textbook, ch5.
 // Not completed, left for students to complete if they wish.
@@ -42,19 +44,21 @@ public class WordPuzzle
 
       // check for words 
       StringBuilder sb = new StringBuilder();
+
+      // starting from (i,j), read k pixels, check whether this k-letter word is a real word.
       for (int i=0; i<matrix.length; i++)
       {
          for (int j=0; j<matrix[i].length; j++)
          {
-	    sb.setLength(0);
+	         sb.setLength(0);  // initialization
             for (int k=0; k + j < matrix[i].length; k++)
             {	  
-               sb.append(matrix[i][j+k]);
-               if (table.contains(new String(sb))) 
+               sb.append(matrix[i][j+k]);    // read one more letter into the string
+               if (table.contains(new String(sb)))    // if the table includes the string you build
                    System.out.println("Found \"" + sb + "\" horizontally at "
-		         + "(" + i + "," + j + ")");
+		         + "(" + i + "," + j + ")");   // print out
             }
          }
-      }
+      }  
    }
 }
